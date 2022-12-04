@@ -8,6 +8,7 @@ app.use(express.json());
 app.get('/insert', async (req, res) => {
     const { string }= req.query;
     const insertDash = await insertDashBetweenEven(string);
+    await fsp.writeFile('log.json', insertDash);
     res.status(200);
     res.json(insertDash);
 });
@@ -16,6 +17,7 @@ app.get('/insert', async (req, res) => {
 app.post('/insert', async (req, res) => {
     const { string } = req.body;
     const insertDash = await insertDashBetweenEven(string);
+    await fsp.writeFile('log.json', insertDash);
     res.status(200);
     res.json(insertDash);
 });
