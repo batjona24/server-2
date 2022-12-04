@@ -5,8 +5,7 @@ async function insertDashBetweenEven(string) {
             return Number(element);
         }
         else return element;
-    });
-    
+    }); 
     for(let i = 0; i < numbers_array.length; i++) {
         if(numbers_array[i - 1] % 2 === 0 && numbers_array[i] % 2 === 0) {
             numbers_array.splice(i, 0, '-');
@@ -14,5 +13,4 @@ async function insertDashBetweenEven(string) {
     }
     return numbers_array.join('');
 }
-
 export default insertDashBetweenEven;
